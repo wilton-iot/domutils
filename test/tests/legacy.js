@@ -1,5 +1,6 @@
-var DomUtils = require("../..");
-var fixture = require("../fixture");
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var DomUtils = require("domutils/");
+var fixture = require("domutils/test/fixture");
 var assert = require("assert");
 
 // Set up expected structures
@@ -117,3 +118,5 @@ describe("legacy", function() {
 	});
 
 });
+
+return module.exports;});

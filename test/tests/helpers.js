@@ -1,5 +1,6 @@
-var makeDom = require("../utils").makeDom;
-var helpers = require("../..");
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var makeDom = require("domutils/test/utils").makeDom;
+var helpers = require("domutils/");
 var assert = require("assert");
 
 describe("helpers", function() {
@@ -67,23 +68,28 @@ describe("helpers", function() {
 		var uniqueSort = helpers.uniqueSort;
 		var dom, p, span, a;
 
-		beforeEach(function() {
+		var beforeEach = function() {
 			dom = makeDom("<div><p><span></span></p><a></a></div>")[0];
 			p = dom.children[0];
 			span = p.children[0];
 			a = dom.children[1];
-		});
-
+		};
+                
+                beforeEach();
 		it("leaves unique elements untouched", function() {
 			assert.deepEqual(uniqueSort([p, a]), [p, a]);
 		});
 
+                beforeEach();
 		it("removes duplicate elements", function() {
 			assert.deepEqual(uniqueSort([p, a, p]), [p, a]);
 		});
 
+                beforeEach();
 		it("sorts nodes in document order", function() {
 			assert.deepEqual(uniqueSort([a, dom, span, p]), [dom, p, span, a]);
 		});
 	});
 });
+
+return module.exports;});
