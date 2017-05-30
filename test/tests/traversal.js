@@ -1,4 +1,7 @@
 define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var test = require("tape-compat");
+var describe = test.describe;
+var it = test.it;    
 var makeDom = require("domutils/test/utils").makeDom;
 var traversal = require("domutils/");
 var assert = require("assert");
