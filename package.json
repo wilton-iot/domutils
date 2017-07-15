@@ -43,5 +43,10 @@
       "it": true,
       "beforeEach": true
     }
+  },
+  "wilton": {
+    "excludes": [
+      "test"
+    ]
   }
 }
