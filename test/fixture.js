@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 var makeDom = require("domutils/test/utils").makeDom;
 var markup = Array(21).join(
 	"<?xml><tag1 id='asdf'> <script>text</script> <!-- comment --> <tag2> text </tag1>"
@@ -6,4 +6,4 @@ var markup = Array(21).join(
 
 module.exports = makeDom(markup);
 
-return module.exports;});
+require = requireOrig;});

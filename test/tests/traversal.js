@@ -1,9 +1,9 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 var test = require("tape-compat");
 var describe = test.describe;
 var it = test.it;    
 var makeDom = require("domutils/test/utils").makeDom;
-var traversal = require("domutils/");
+var traversal = require("domutils");
 var assert = require("assert");
 
 describe("traversal", function() {
@@ -20,4 +20,4 @@ describe("traversal", function() {
   });
 });
 
-return module.exports;});
+require = requireOrig;});

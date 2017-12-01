@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 var htmlparser = require("htmlparser2");
 
 exports.makeDom = function(markup) {
@@ -9,4 +9,4 @@ exports.makeDom = function(markup) {
 	return handler.dom;
 };
 
-return module.exports;});
+require = requireOrig;});

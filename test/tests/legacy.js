@@ -1,8 +1,8 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 var test = require("tape-compat");
 var describe = test.describe;
 var it = test.it;    
-var DomUtils = require("domutils/");
+var DomUtils = require("domutils");
 var fixture = require("domutils/test/fixture");
 var assert = require("assert");
 
@@ -122,4 +122,4 @@ describe("legacy", function() {
 
 });
 
-return module.exports;});
+require = requireOrig;});
