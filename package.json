@@ -46,7 +46,8 @@
   },
   "wilton": {
     "excludes": [
-      "test"
+      "test",
+      "test.js"
     ]
   }
 }
